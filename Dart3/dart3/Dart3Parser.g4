@@ -32,7 +32,9 @@ parser grammar Dart3Parser;
 options {
     tokenVocab = Dart3Lexer;
 }
-
+flutterApp
+    : mainFunction widgetClasses
+    ;
 additiveExpression
     : multiplicativeExpression (additiveOperator multiplicativeExpression)*
     | SUPER_ ( additiveOperator multiplicativeExpression)+
