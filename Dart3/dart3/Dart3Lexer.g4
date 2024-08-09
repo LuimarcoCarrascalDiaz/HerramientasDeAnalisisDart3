@@ -35,7 +35,39 @@ options {
 }
 
 // Insert here @header for C++ lexer.
-
+AppBar          : 'AppBar';
+Scaffold        : 'Scaffold';
+IconButton      : 'IconButton';
+AppBarDemo      : 'AppBar Demo';
+NextPage        : 'Next page';
+Center          : 'Center';
+Text            : 'Text';
+Icon            : 'Icon';
+Icons           : 'Icons';
+ShowSnackbar    : 'Show Snackbar';
+NavigateNext    : 'NavigateNext';
+MaterialApp     : 'MaterialApp';
+ScaffoldMessenger: 'ScaffoldMessenger';
+Navigator       : 'Navigator';
+Push            : 'push';
+MaterialPageRoute: 'MaterialPageRoute';
+Context         : 'context';
+Const           : 'const';
+Void            : 'void';
+Widget          : 'Widget';
+BuildContext    : 'BuildContext';
+Build           : 'build';
+Main            : 'main';
+RunApp          : 'runApp';
+Override        : '@override';
+Home            : 'home';
+Key             : 'key';
+Tooltip         : 'tooltip';
+OnPressed       : 'onPressed';
+Title           : 'title';
+Actions         : 'actions';
+Body            : 'body';
+Child           : 'child';
 A           : '&';
 AA          : '&&';
 AE          : '&=';
