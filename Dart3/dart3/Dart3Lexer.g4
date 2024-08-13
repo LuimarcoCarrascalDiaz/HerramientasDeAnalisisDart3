@@ -197,6 +197,7 @@ WITH_       : 'with';
 YIELD_      : 'yield';
 NUMBER      : DIGIT+ ( '.' DIGIT+)? EXPONENT? | '.' DIGIT+ EXPONENT?;
 HEX_NUMBER  : '0x' HEX_DIGIT+ | '0X' HEX_DIGIT+;
+STRING          : '"' ('\\"' | .)*? '"';
 SingleLineString:
     StringDQ
     | StringSQ
