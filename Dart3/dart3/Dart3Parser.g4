@@ -36,14 +36,15 @@ flutterApp
     : mainFunction widgetClasses
     ;
 mainFunction
-    : 'void' Main '()' '=>' RunApp '(' Const IDENTIFIER ')' ';'
-    ;
-widgetClasses
-    : classDeclaration*
+    : 'void' Main '()' '=>' RunApp '(' CONST_ IDENTIFIER ')' ';'
     ;
 classDeclaration
     : 'class' IDENTIFIER 'extends' IDENTIFIER (classBody)*
     ;
+widgetClasses
+    : classDeclaration*
+    ;
+
 classBody
     : 'const' IDENTIFIER '(' 'super' D Key '?' ':' IDENTIFIER '(' ';'
     | buildMethod
@@ -75,7 +76,7 @@ body
     ;
 
 title
-    : Title CO Const Text OP STRING CP
+    : Title CO CONST_ Text OP STRING CP
     ;
 
 actions
@@ -86,7 +87,7 @@ iconButton
     : IconButton OP (icon | tooltip | onPressed) CP
     ;
 icon
-    : Icon CO Const Icons D IDENTIFIER
+    : Icon CO CONST_ Icons D IDENTIFIER
     ;
 
 tooltip
