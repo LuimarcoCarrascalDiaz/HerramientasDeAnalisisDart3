@@ -52,8 +52,7 @@ Navigator       : 'Navigator';
 Push            : 'push';
 MaterialPageRoute: 'MaterialPageRoute';
 Context         : 'context';
-Const           : 'const';
-Void            : 'void';
+
 Widget          : 'Widget';
 BuildContext    : 'BuildContext';
 Build           : 'build';
