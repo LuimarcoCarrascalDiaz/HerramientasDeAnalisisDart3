@@ -35,6 +35,67 @@ options {
 flutterApp
     : mainFunction widgetClasses
     ;
+mainFunction
+    : 'void' Main '()' '=>' RunApp '(' Const IDENTIFIER ')' ';'
+    ;
+widgetClasses
+    : classDeclaration*
+    ;
+classDeclaration
+    : 'class' IDENTIFIER 'extends' IDENTIFIER (classBody)*
+    ;
+classBody
+    : 'const' IDENTIFIER '(' 'super' D Key '?' ':' IDENTIFIER '(' ';'
+    | buildMethod
+    ;
+buildMethod
+    : Override? BuildContext Build '(' BuildContext Context ')' block
+    ;
+block
+    : OBC widgetDeclaration* CBC
+    ;
+widgetDeclaration
+    : returnStatement
+    ;
+returnStatement
+    : 'return' widget ';'
+    ;
+widget
+    : scaffold
+    ;
+
+scaffold
+    : Scaffold '(' (appBar | body | actions) ')'
+    ;
+appBar
+    : AppBar OP (title | actions) CP
+    ;
+body
+    : Body ':' widget
+    ;
+
+title
+    : Title CO Const Text OP STRING CP
+    ;
+
+actions
+    : Actions CO OBC iconButton (',' iconButton)* CBC
+    ;
+
+iconButton
+    : IconButton OP (icon | tooltip | onPressed) CP
+    ;
+icon
+    : Icon CO Const Icons D IDENTIFIER
+    ;
+
+tooltip
+    : Tooltip CO STRING
+    ;
+
+onPressed
+    : OnPressed CO block
+    ;
 additiveExpression
     : multiplicativeExpression (additiveOperator multiplicativeExpression)*
     | SUPER_ ( additiveOperator multiplicativeExpression)+
