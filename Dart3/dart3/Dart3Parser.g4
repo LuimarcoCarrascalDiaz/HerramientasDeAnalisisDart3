@@ -36,13 +36,13 @@ flutterApp
     : mainFunction widgetClasses
     ;
 mainFunction
-    : 'void' Main '()' '=>' RunApp '(' CONST_ IDENTIFIER ')' ';'
+    : 'void' Main '('')' '=>' RunApp '(' CONST_ IDENTIFIER '('')'')' ';'
     ;
-classDeclaration
+classDeclarationFlutter
     : 'class' IDENTIFIER 'extends' IDENTIFIER (classBody)*
     ;
 widgetClasses
-    : classDeclaration*
+    : classDeclarationFlutter*
     ;
 
 classBody
@@ -52,13 +52,13 @@ classBody
 buildMethod
     : Override? BuildContext Build '(' BuildContext Context ')' block
     ;
-block
+blockFlutter
     : OBC widgetDeclaration* CBC
     ;
 widgetDeclaration
     : returnStatement
     ;
-returnStatement
+returnStatementFlutter
     : 'return' widget ';'
     ;
 widget
