@@ -39,18 +39,18 @@ mainFunction
     : 'void' Main '('')' '=>' RunApp '(' CONST_ IDENTIFIER '('')'')' ';'
     ;
 classDeclarationFlutter
-    : 'class' IDENTIFIER 'extends' IDENTIFIER (classBody)*
+    : 'class' IDENTIFIER 'extends' IDENTIFIER '{'(classBody)* '}'
     ;
 widgetClasses
     : classDeclarationFlutter*
     ;
 
 classBody
-    : 'const' IDENTIFIER '(' 'super' D Key '?' ':' IDENTIFIER '(' ';'
+    : 'const' IDENTIFIER '(' '{''super' D Key ('?' ':' IDENTIFIER)? '}' ')' ';'
     | buildMethod
     ;
 buildMethod
-    : Override? BuildContext Build '(' BuildContext Context ')' block
+    : Override? Widget BuildContext Build '(' BuildContext Context ')' block
     ;
 blockFlutter
     : OBC widgetDeclaration* CBC
