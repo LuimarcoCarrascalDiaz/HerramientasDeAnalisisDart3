@@ -4,4 +4,4 @@ Asesor de tesis: Nicolás cardozo Álvarez
 documento completado..
 se agrega procesamiento de widgets en flutter
 
-para usar este programa ingrese a la web de ANTLR
+para usar este programa ingrese a la siguiente web que es propiedad de ANTLR http://lab.antlr.org/
